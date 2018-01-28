@@ -361,11 +361,7 @@ public class ParcelableAnalysis {
     }
 
     private ASTType resolveType(ASTType astType, ASTType ownerType, ASTType toResolve) {
-        ASTType resolvedType = GenericsUtil.getInstance().getType(astType, ownerType, toResolve);
-        if(resolvedType == null) {
-             return toResolve;
-        }
-        return resolvedType;
+        return GenericsUtil.getInstance().getType(astType, ownerType, toResolve);
     }
 
     private Set<ASTMethod> findFactoryMethods(ASTType astType) {
